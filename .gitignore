@@ -1,0 +1,13 @@
+.vscode
+data
+data_set_raw
+evaluate_raw.ipynb
+result/raw_result
+result/yidong_result
+images
+
+/bin
+/build
+RCode/.Rhistory
+.Rproj.user
+/target
