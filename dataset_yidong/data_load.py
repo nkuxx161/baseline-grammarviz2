@@ -20,14 +20,14 @@ def get_curve(machine_path, machine_id):
     print(col_name)
     for col in col_name:
         value = data[col].tolist()
-        timestamp = data.index.tolist()
-        data_dic = {'timestamp': timestamp, 'value': value}
-        # data_dic = {'value': value}
+        # timestamp = data.index.tolist()
+        # data_dic = {'timestamp': timestamp, 'value': value}
+        data_dic = {'value': value}
         kpi_data = pd.DataFrame(data_dic)
         print('save', str(machine_id)+'_'+col, kpi_data.shape)
-        save_path = os.path.join('./curves', str(machine_id) + '_' + col + '.csv')
-        kpi_data.to_csv(save_path, index=None)
-        # kpi_data.to_csv(save_path, index=None, header=None)
+        save_path = os.path.join('./curves_no_header', str(machine_id) + '_' + col + '.csv')
+        # kpi_data.to_csv(save_path, index=None)
+        kpi_data.to_csv(save_path, index=None, header=None)
 
 
 if __name__ == '__main__':
